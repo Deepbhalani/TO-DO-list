@@ -4,87 +4,99 @@
         <title>Todo List App</title>
         <style>
             body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                color: #333;
-                margin: 0;
-                padding: 0;
-            }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e8eff1;
+    color: #5c5b5e;
+    margin: 0;
+    padding: 0;
+}
 
-            h1 {
-                background-color: #4CAF50;
-                color: white;
-                margin: 0;
-                padding: 20px;
-                text-align: center;
-            }
+h1 {
+    background-color: #0078d4;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-            ul {
-                list-style: none;
-                padding: 0;
-            }
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
 
-            ul li {
-                background: #fff;
-                border: 1px solid #ddd;
-                margin-bottom: 10px;
-                padding: 10px;
-                position: relative;
-            }
+ul li {
+    background: #ffffff;
+    border-left: 5px solid #0078d4;
+    margin-bottom: 10px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease-in-out;
+}
 
-            ul li a {
-                color: #333;
-                text-decoration: none;
-                font-weight: bold;
-            }
+ul li:hover {
+    transform: scale(1.02);
+}
 
-            ul li a:hover {
-                color: #4CAF50;
-            }
+ul li a {
+    color: #5c5b5e;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-            .delete-btn {
-                color: red;
-                position: absolute;
-                right: 10px;
-                top: 10px;
-            }
+ul li a:hover {
+    color: #0078d4;
+}
 
-            .edit-btn {
-                color: #FFC107;
-                position: absolute;
-                right: 40px;
-                top: 10px;
-            }
+.delete-btn {
+    color: #e81123;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
 
-            form {
-                background: #fff;
-                padding: 20px;
-                margin-top: 20px;
-            }
+.edit-btn {
+    color: #ff8c00;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+}
 
-            label {
-                display: block;
-                margin-bottom: 10px;
-            }
+form {
+    background: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-            input[type="text"] {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 10px;
-                border: 1px solid #ddd;
-            }
+label {
+    display: block;
+    margin-bottom: 10px;
+}
 
-            input[type="submit"] {
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                cursor: pointer;
-            }
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
 
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
+input[type="submit"] {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #005a9e;
+}
+
         </style>
     </head>
 
