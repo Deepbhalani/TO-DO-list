@@ -1,123 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Todo List App</title>
-        <style>
-            body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e8eff1;
-    color: #5c5b5e;
-    margin: 0;
-    padding: 0;
-}
+<head>
+    <title>Enhanced Todo List App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #5c5b5e;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s;
+        }
 
-h1 {
-    background-color: #0078d4;
-    color: white;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+        h1 {
+            background-color: #4caf50;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px;
-}
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px;
+        }
 
-ul li {
-    background: #ffffff;
-    border-left: 5px solid #0078d4;
-    margin-bottom: 10px;
-    padding: 20px;
-    position: relative;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: transform 0.1s ease-in-out;
-}
+        ul li {
+            background: #ffffff;
+            border-left: 5px solid #4caf50;
+            margin-bottom: 10px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+            transition: all 0.2s ease-in-out;
+        }
 
-ul li:hover {
-    transform: scale(1.02);
-}
+        ul li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+        }
 
-ul li a {
-    color: #5c5b5e;
-    text-decoration: none;
-    font-weight: bold;
-}
+        ul li a {
+            color: #5c5b5e;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-ul li a:hover {
-    color: #0078d4;
-}
+        ul li a:hover {
+            color: #4caf50;
+        }
 
-.delete-btn {
-    color: #e81123;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
+        .delete-btn {
+            color: #f44336;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
 
-.edit-btn {
-    color: #ff8c00;
-    position: absolute;
-    right: 40px;
-    top: 10px;
-}
+        .edit-btn {
+            color: #ff9800;
+            position: absolute;
+            right: 40px;
+            top: 10px;
+        }
 
-form {
-    background: #ffffff;
-    padding: 20px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+        form {
+            background: #ffffff;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-}
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
 
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-}
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
 
-input[type="submit"] {
-    background-color: #0078d4;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.25s ease-in-out;
+        }
 
-input[type="submit"]:hover {
-    background-color: #005a9e;
-}
+        input[type="submit"]:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enhanced Todo Lists</h1>
+    <ul>
+        <% todolist.forEach(function(todo, index) { %>
+        <li>
+            <a href="/todo/delete/<%= index %>" class="delete-btn">✘</a>
+            <a href="/todo/<%= index %>" class="edit-btn">✎</a>
+            <%- todo %>
+        </li>
+        <% }); %>
+    </ul>
 
-        </style>
-    </head>
-
-    <body>
-        <h1>Todo Lists</h1>
-        <ul>
-            <% todolist.forEach(function(todo, index) { %>
-            <li>
-                <a href="/todo/delete/<%= index %>" class="delete-btn">✘</a>
-                <a href="/todo/<%= index %>" class="edit-btn">✎</a>
-                <%- todo %>
-            </li>
-            <% }); %>
-        </ul>
-
-        <form action="/todo/add/" method="post">
-            <p>
-                <label for="newtodo">give me your task here..</label>
-                <input type="text" name="newtodo" id="newtodo" autofocus />
-                <input type="submit" value="Add" />
-            </p>
-        </form>
-    </body>
+    <form action="/todo/add/" method="post">
+        <p>
+            <label for="newtodo">Enter your task here:</label>
+            <input type="text" name="newtodo" id="newtodo" autofocus />
+            <input type="submit" value="Add Task" />
+        </p>
+    </form>
+</body>
 </html>
